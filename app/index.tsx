@@ -11,6 +11,8 @@ const Index = () => {
       }}
     >
       <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Edit app/index.tsx to edit this screen.</Text>
       <Button icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
         I am button
       </Button>

@@ -1,7 +1,7 @@
 import { Stack } from "expo-router";
 import { PaperProvider } from "react-native-paper"
 
-export default function RootLayout() {
+const RootLayout = () => {
   return (
     <PaperProvider>
       <Stack>
@@ -10,3 +10,5 @@ export default function RootLayout() {
     </PaperProvider>
   );
 }
+
+export default RootLayout
