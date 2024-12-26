@@ -62,7 +62,7 @@ const Signup = () => {
         <TouchableRipple
           style={styles.btn}
           rippleColor="#00000040"
-          onPress={() => router.push("/auth/Signin")}
+          onPress={() => router.push("/")}
         >
           <Text style={styles.btnText}>Next</Text>
         </TouchableRipple>
