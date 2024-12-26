@@ -1,11 +1,15 @@
 import { Text, View, StyleSheet, Image, } from "react-native";
 import { TouchableRipple } from "react-native-paper";
-import { router } from "expo-router";
+import { useRouter } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Index = () => {
+
+  const router = useRouter()
+
   return (
     // for background color
-    <View style={styles.background}>
+    <SafeAreaView style={styles.background}>
 
       {/* main container of the screen*/}
       <View style={styles.container}>
@@ -13,7 +17,7 @@ const Index = () => {
         <View style={styles.imgCont}>
           <Image
             source={require("../assets/images/X-white.png")}
-            style={{ height: 35, width: 35, marginTop: 5 }}
+            style={{ height: 35, width: 35, marginTop: 5}}
           />
 
         </View>
@@ -30,20 +34,22 @@ const Index = () => {
           <TouchableRipple
             style={styles.btn}
             rippleColor="#00000040"
-            onPress={() => router.push("/auth/Signup")}>
-            <Text style={styles.btnText}>Sign up</Text>
+            onPress={() => router.push("/auth/Signup")}
+          >
+            <Text style={styles.btnText}>Create your account</Text>
           </TouchableRipple>
 
           {/* Sign in btn */}
           <TouchableRipple
             style={styles.btn}
             rippleColor="#00000040"
-            onPress={() => router.push("/auth/Signin")}>
+            onPress={() => router.push("/auth/Signin")}
+          >
             <Text style={styles.btnText}>Sign in</Text>
           </TouchableRipple>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -53,6 +59,7 @@ const styles = StyleSheet.create({
   background: {
     backgroundColor: "#000",
     height: '100%'
+  
   },
 
   container: {
