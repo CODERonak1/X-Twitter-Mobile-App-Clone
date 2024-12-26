@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import { TextInput } from 'react-native-paper'
+import { TextInput, TouchableRipple } from 'react-native-paper'
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -8,7 +8,7 @@ const Signup = () => {
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [dob, setDob] = useState('')
+  const [dob, setDOB] = useState('')
 
   const router = useRouter()
 
@@ -22,35 +22,51 @@ const Signup = () => {
             mode="outlined"
             label="Name"
             style={styles.input}
-            // right={<TextInput.Affix text="/100" />}
             textColor='white'
             outlineColor='#414952'
             cursorColor='#2c96df'
             activeOutlineColor='#2c96df'
+            placeholderTextColor={'grey'}
+            value={name}
+            onChangeText={(name) => setName(name)}
 
           />
           <TextInput
             mode="outlined"
             label="Email"
             style={styles.input}
-            // right={<TextInput.Affix text="/100" />}
             textColor='white'
             outlineColor='#414952'
             cursorColor='#2c96df'
             activeOutlineColor='#2c96df'
+            placeholderTextColor={'grey'}
+            value={email}
+            onChangeText={(email) => setEmail(email)}
 
           />
           <TextInput
             mode="outlined"
             label="Date of birth"
             style={styles.input}
-            // right={<TextInput.Affix text="/100" />}
             textColor='white'
             outlineColor='#414952'
             cursorColor='#2c96df'
             activeOutlineColor='#2c96df'
+            placeholderTextColor={'grey'}
+            value={dob}
+            onChangeText={(dob) => setDOB(dob)}
+
           />
         </View>
+
+        <TouchableRipple
+          style={styles.btn}
+          rippleColor="#00000040"
+          onPress={() => router.push("/auth/Signin")}
+        >
+          <Text style={styles.btnText}>Next</Text>
+        </TouchableRipple>
+
       </View>
     </SafeAreaView>
   )
@@ -76,9 +92,9 @@ const styles = StyleSheet.create({
   },
 
   inputs: {
-     width: '90%',
-     alignItems: 'center',
-     marginTop: 130,
+    width: '90%',
+    alignItems: 'center',
+    marginTop: 130,
   },
 
   input: {
@@ -88,5 +104,22 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     color: 'white',
     marginTop: 20,
+  },
+
+  btn: {
+    backgroundColor: 'white',
+    marginVertical: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    width: '30%',
+    borderRadius: 50,
+    marginTop: 50
+  },
+
+  btnText: {
+    color: 'black',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
   }
 })
