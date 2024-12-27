@@ -7,11 +7,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 // sign up component
 const Signup = () => {
-
+  // for now doing the auth with email and password
   // managing state
-  const [name, setName] = useState('')
+
   const [email, setEmail] = useState('')
-  const [dob, setDOB] = useState('')
+  const [password, setPassword] = useState('')
 
   // router for navigation
   const router = useRouter()
@@ -26,20 +26,6 @@ const Signup = () => {
 
         {/* inputs the name, email and dob */}
         <View style={styles.inputs}>
-          {/* inputs the name */}
-          <TextInput
-            mode="outlined"
-            label="Name"
-            style={styles.input}
-            textColor='white'
-            outlineColor='#414952'
-            cursorColor='#2c96df'
-            activeOutlineColor='#2c96df'
-            placeholderTextColor={'grey'}
-            value={name}
-            onChangeText={(name) => setName(name)}
-
-          />
 
           {/* inputs the email */}
           <TextInput
@@ -49,36 +35,38 @@ const Signup = () => {
             textColor='white'
             outlineColor='#414952'
             cursorColor='#2c96df'
+            outlineStyle={{ borderWidth: 2 }}
             activeOutlineColor='#2c96df'
             placeholderTextColor={'grey'}
             value={email}
             onChangeText={(email) => setEmail(email)}
-
+            keyboardType='email-address'
           />
 
-          {/* inputs the dob */}
+          {/* inputs the password */}
           <TextInput
             mode="outlined"
-            label="Date of birth"
+            label="Password"
             style={styles.input}
             textColor='white'
             outlineColor='#414952'
+            outlineStyle={{ borderWidth: 2 }}
             cursorColor='#2c96df'
             activeOutlineColor='#2c96df'
             placeholderTextColor={'grey'}
-            value={dob}
-            onChangeText={(dob) => setDOB(dob)}
-
+            value={password}
+            onChangeText={(name) => setPassword(name)}
           />
+
         </View>
 
-        {/* Next btn */}
+        {/* signup btn */}
         <TouchableRipple
           style={styles.btn}
           rippleColor="#00000040"
           onPress={() => router.push("/")}
         >
-          <Text style={styles.btnText}>Next</Text>
+          <Text style={styles.btnText}>Sign up</Text>
         </TouchableRipple>
 
       </View>
@@ -108,11 +96,11 @@ const styles = StyleSheet.create({
   inputs: {
     width: '90%',
     alignItems: 'center',
-    marginTop: 130,
+    marginTop: 90,
   },
 
   input: {
-    width: '80%',
+    width: '90%',
     height: 60,
     backgroundColor: 'black',
     borderColor: 'grey',
@@ -122,12 +110,11 @@ const styles = StyleSheet.create({
 
   btn: {
     backgroundColor: 'white',
-    marginVertical: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 10,
-    width: '30%',
-    borderRadius: 50,
-    marginTop: 50
+    paddingVertical: 8,
+    paddingHorizontal: 30,
+    width: 'auto',
+    borderRadius: 30,
+    marginTop: 20
   },
 
   btnText: {

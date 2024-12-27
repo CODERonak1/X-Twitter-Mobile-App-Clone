@@ -1,5 +1,5 @@
 // importing the essential imports
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import { TextInput, TouchableRipple } from 'react-native-paper'
 import { useRouter } from "expo-router";
@@ -34,13 +34,13 @@ const Signin = () => {
             style={styles.input}
             textColor='white'
             outlineColor='#414952'
+            outlineStyle={{ borderWidth: 2 }}
             cursorColor='#2c96df'
             placeholderTextColor={'grey'}
             keyboardType='email-address'
             value={email}
             onChangeText={(email) => setEmail(email)}
             activeOutlineColor='#2c96df'
-
           />
 
           {/* inputs the password */}
@@ -50,6 +50,7 @@ const Signin = () => {
             style={styles.input}
             textColor='white'
             outlineColor='#414952'
+            outlineStyle={{ borderWidth: 2 }}
             cursorColor='#2c96df'
             activeOutlineColor='#2c96df'
             placeholderTextColor={'grey'}
@@ -59,14 +60,25 @@ const Signin = () => {
           />
         </View>
 
+        <View style={styles.buttons}>
+
+          <Pressable
+            style={[styles.btn, styles.forgotBtn]}
+            onPress={() => router.push("/")}
+          >
+            <Text style={[styles.btnText, styles.forgotText]}>Forgot password?</Text>
+          </Pressable>
+
+          <TouchableRipple
+            style={styles.btn}
+            rippleColor="#00000040"
+            onPress={() => router.push("/")}
+          >
+            <Text style={styles.btnText}>Signin</Text>
+          </TouchableRipple>
+        </View>
+
         {/* Sign in btn */}
-        <TouchableRipple
-          style={styles.btn}
-          rippleColor="#00000040"
-          onPress={() => router.push("/")}
-        >
-          <Text style={styles.btnText}>Signin</Text>
-        </TouchableRipple>
 
       </View>
     </SafeAreaView>
@@ -95,11 +107,11 @@ const styles = StyleSheet.create({
   inputs: {
     width: '90%',
     alignItems: 'center',
-    marginTop: 130,
+    marginTop: 70,
   },
 
   input: {
-    width: '80%',
+    width: '90%',
     height: 60,
     backgroundColor: 'black',
     borderColor: 'grey',
@@ -107,14 +119,30 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 
+  buttons: {
+    // flex: 1,
+    alignItems: 'center'
+  },
+
   btn: {
     backgroundColor: 'white',
-    marginVertical: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 10,
-    width: '30%',
-    borderRadius: 50,
-    marginTop: 50
+    paddingVertical: 8,
+    paddingHorizontal: 30,
+    width: 'auto',
+    borderRadius: 30,
+    marginTop: 10
+  },
+
+  forgotBtn: {
+    marginTop: 12,
+    width: 'auto',
+    backgroundColor: 'black',
+  },
+
+  forgotText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 
   btnText: {
@@ -122,5 +150,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
-  }
+  },
 })
