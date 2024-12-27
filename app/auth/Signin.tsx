@@ -1,25 +1,33 @@
+// importing the essential imports
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import { TextInput, TouchableRipple } from 'react-native-paper'
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+// sign in component
 const Signin = () => {
 
+  // managing input state
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  // router for navigation
   const router = useRouter()
 
   return (
+    // background
     <SafeAreaView style={styles.background}>
+      {/* screen container */}
       <View style={styles.container}>
         {/* For now using the email and password more will be added later */}
+        {/* text */}
         <Text style={styles.text}>To get started, first enter your</Text>
         <Text style={styles.text}>email and password</Text>
 
+        {/* inputs the email and password */}
         <View style={styles.inputs}>
-
+          {/* inputs the email */}
           <TextInput
             mode="outlined"
             label="Email"
@@ -35,6 +43,7 @@ const Signin = () => {
 
           />
 
+          {/* inputs the password */}
           <TextInput
             mode="outlined"
             label="Password"
@@ -50,12 +59,13 @@ const Signin = () => {
           />
         </View>
 
+        {/* Sign in btn */}
         <TouchableRipple
           style={styles.btn}
           rippleColor="#00000040"
           onPress={() => router.push("/")}
         >
-          <Text style={styles.btnText}>Next</Text>
+          <Text style={styles.btnText}>Signin</Text>
         </TouchableRipple>
 
       </View>

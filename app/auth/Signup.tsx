@@ -1,23 +1,32 @@
+// importing the essential imports
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import { TextInput, TouchableRipple } from 'react-native-paper'
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+// sign up component
 const Signup = () => {
 
+  // managing state
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [dob, setDOB] = useState('')
 
+  // router for navigation
   const router = useRouter()
 
   return (
+    // background 
     <SafeAreaView style={styles.background}>
+      {/* screen container */}
       <View style={styles.container}>
+        {/* text */}
         <Text style={styles.text}>Create your account</Text>
 
+        {/* inputs the name, email and dob */}
         <View style={styles.inputs}>
+          {/* inputs the name */}
           <TextInput
             mode="outlined"
             label="Name"
@@ -31,6 +40,8 @@ const Signup = () => {
             onChangeText={(name) => setName(name)}
 
           />
+
+          {/* inputs the email */}
           <TextInput
             mode="outlined"
             label="Email"
@@ -44,6 +55,8 @@ const Signup = () => {
             onChangeText={(email) => setEmail(email)}
 
           />
+
+          {/* inputs the dob */}
           <TextInput
             mode="outlined"
             label="Date of birth"
@@ -59,6 +72,7 @@ const Signup = () => {
           />
         </View>
 
+        {/* Next btn */}
         <TouchableRipple
           style={styles.btn}
           rippleColor="#00000040"

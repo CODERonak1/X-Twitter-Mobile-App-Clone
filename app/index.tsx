@@ -1,10 +1,13 @@
+// importing the essential imports
 import { Text, View, StyleSheet, Image, } from "react-native";
 import { TouchableRipple } from "react-native-paper";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+// index component
 const Index = () => {
 
+  // router for navigation
   const router = useRouter()
 
   return (
@@ -17,7 +20,7 @@ const Index = () => {
         <View style={styles.imgCont}>
           <Image
             source={require("../assets/images/X-white.png")}
-            style={{ height: 35, width: 35, marginTop: 5}}
+            style={{ height: 35, width: 35, marginTop: 5 }}
           />
 
         </View>
@@ -28,6 +31,7 @@ const Index = () => {
           <Text style={styles.text}>in the world right now.</Text>
         </View>
 
+        {/* btn conatainer */}
         <View style={styles.authOptions}>
 
           {/* Sign up btn */}
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
   background: {
     backgroundColor: "#000",
     height: '100%'
-  
+
   },
 
   container: {
