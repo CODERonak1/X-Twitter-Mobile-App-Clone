@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, Image, } from "react-native";
 import { TouchableRipple } from "react-native-paper";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import XWhite from "@/components/XWhite";
 
 // index component
 const Index = () => {
@@ -18,10 +19,7 @@ const Index = () => {
       <View style={styles.container}>
         {/* X white image */}
         <View style={styles.imgCont}>
-          <Image
-            source={require("../assets/images/X-white.png")}
-            style={{ height: 35, width: 35, marginTop: 5 }}
-          />
+          <XWhite />
 
         </View>
 
@@ -91,11 +89,11 @@ const styles = StyleSheet.create({
 
   btn: {
     backgroundColor: 'white',
-    marginVertical: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 30,
     width: '80%',
-    borderRadius: 50,
+    borderRadius: 30,
+    marginTop: 20
   },
 
   btnText: {

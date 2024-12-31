@@ -4,9 +4,22 @@ import React, { useState } from 'react'
 import { TextInput, TouchableRipple } from 'react-native-paper'
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { auth } from '../../firebaseConfig';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 // sign in component
 const Signin = () => {
+
+  const handleSignin = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password)
+      const user = userCredential.user
+      router.push("/Home")
+      console.log("Signin successfull!", + user.email);
+    } catch (error: any) {
+      console.log('Nothing just error');
+    }
+  }
 
   // managing input state
   const [email, setEmail] = useState('')
@@ -57,6 +70,7 @@ const Signin = () => {
             value={password}
             passwordRules=''
             onChangeText={(password) => setPassword(password)}
+            secureTextEntry={true}
           />
         </View>
 
@@ -72,9 +86,9 @@ const Signin = () => {
           <TouchableRipple
             style={styles.btn}
             rippleColor="#00000040"
-            onPress={() => router.push("/")}
+            onPress={handleSignin}
           >
-            <Text style={styles.btnText}>Signin</Text>
+            <Text style={styles.btnText}>Sign in</Text>
           </TouchableRipple>
         </View>
 

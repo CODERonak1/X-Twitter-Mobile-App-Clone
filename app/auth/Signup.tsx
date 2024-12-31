@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { TextInput, TouchableRipple } from 'react-native-paper'
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { auth } from '../../firebaseConfig';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 // sign up component
 const Signup = () => {
@@ -15,6 +17,37 @@ const Signup = () => {
 
   // router for navigation
   const router = useRouter()
+
+  const handleSignup = async () => {
+
+    try {
+      // creating user
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password)
+      const user = userCredential.user
+      router.push("/Home")
+      console.log("Signup successfull!", + user);
+    } catch (error: any) {
+      console.log("I am error");
+
+      if (error.code) {
+        // Handling specific error codes
+        switch (error.code) {
+          case 'auth/email-already-in-use':
+            console.log('That email address is already in use!');
+            break;
+          case 'auth/weak-password':
+            console.log('The password is too weak.');
+            break;
+
+          default:
+            console.error("An unexpected error occurred:", error.message);
+            break;
+        }
+      } else {
+        console.error("An unexpected error occurred:", error);
+      }
+    }
+  }
 
   return (
     // background 
@@ -55,7 +88,8 @@ const Signup = () => {
             activeOutlineColor='#2c96df'
             placeholderTextColor={'grey'}
             value={password}
-            onChangeText={(name) => setPassword(name)}
+            onChangeText={(password) => setPassword(password)}
+            secureTextEntry={true}
           />
 
         </View>
@@ -64,7 +98,7 @@ const Signup = () => {
         <TouchableRipple
           style={styles.btn}
           rippleColor="#00000040"
-          onPress={() => router.push("/")}
+          onPress={handleSignup}
         >
           <Text style={styles.btnText}>Sign up</Text>
         </TouchableRipple>
