@@ -1,4 +1,5 @@
 import { Tabs } from "expo-router";
+import XWhite from "@/components/XWhite";
 // icons
 import Ionicons from '@expo/vector-icons/Ionicons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
@@ -14,12 +15,19 @@ const TabLayout = () => {
             },
             tabBarActiveTintColor: 'white',
             tabBarInactiveTintColor: 'white',
+            headerStyle: {
+                backgroundColor: 'black',
+            }
+
         }}>
             <Tabs.Screen name="Home"
                 options={{
                     tabBarIcon: ({ color, size, focused }) => (
                         <Ionicons name={focused ? 'home' : 'home-outline'} size={size} color={color} />
                     ),
+
+                    headerTitle: () => <XWhite />,
+                    headerTitleAlign: 'center'
                 }}
             />
 
