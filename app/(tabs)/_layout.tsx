@@ -1,4 +1,8 @@
+// imports
 import { Tabs } from "expo-router";
+import { View } from "react-native";
+// components
+import ProfilePic from "@/components/ProfilePic";
 import XWhite from "@/components/XWhite";
 // icons
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -26,8 +30,16 @@ const TabLayout = () => {
                         <Ionicons name={focused ? 'home' : 'home-outline'} size={size} color={color} />
                     ),
 
-                    headerTitle: () => <XWhite />,
-                    headerTitleAlign: 'center'
+                    headerTitle: () => (
+                        <View style={{ flex: 1, alignItems: 'center', flexDirection: 'row' }}>
+                            {/* Profile pic example img */}
+                            <ProfilePic />
+
+                            {/* x logo which appears in the center */}
+                            <XWhite />
+                        </View>
+                    ),
+                    // headerTitleAlign: 'center',
                 }}
             />
 
@@ -35,6 +47,14 @@ const TabLayout = () => {
                 options={{
                     tabBarIcon: ({ color, size, focused }) => (
                         <Ionicons name={focused ? 'search' : 'search-outline'} size={size} color={color} />
+                    ),
+
+                    headerTitle: () => (
+                        <View style={{ flex: 1, alignItems: 'center', flexDirection: 'row' }}>
+                            {/* Profile pic example img */}
+                            <ProfilePic />
+
+                        </View>
                     ),
                 }}
             />
@@ -44,6 +64,14 @@ const TabLayout = () => {
                     tabBarIcon: ({ color, size, focused }) => (
                         <Ionicons name={focused ? 'notifications' : 'notifications-outline'} size={size} color={color} />
                     ),
+
+                    headerTitle: () => (
+                        <View style={{ flex: 1, alignItems: 'center', flexDirection: 'row' }}>
+                            {/* Profile pic example img */}
+                            <ProfilePic />
+
+                        </View>
+                    ),
                 }}
             />
 
@@ -51,6 +79,14 @@ const TabLayout = () => {
                 options={{
                     tabBarIcon: ({ color, size, focused }) => (
                         <FontAwesome name={focused ? 'envelope' : 'envelope-o'} size={size} color={color} />
+                    ),
+
+                    headerTitle: () => (
+                        <View style={{ flex: 1, alignItems: 'center', flexDirection: 'row' }}>
+                            {/* Profile pic example img */}
+                            <ProfilePic />
+
+                        </View>
                     ),
                 }}
             />
