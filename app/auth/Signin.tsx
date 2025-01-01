@@ -54,6 +54,7 @@ const Signin = () => {
             value={email}
             onChangeText={(email) => setEmail(email)}
             activeOutlineColor='#2c96df'
+            autoComplete='email'
           />
 
           {/* inputs the password */}
@@ -76,6 +77,7 @@ const Signin = () => {
 
         <View style={styles.buttons}>
 
+          {/* Forgot Btn */}
           <Pressable
             style={[styles.btn, styles.forgotBtn]}
             onPress={() => router.push("/")}
@@ -83,6 +85,7 @@ const Signin = () => {
             <Text style={[styles.btnText, styles.forgotText]}>Forgot password?</Text>
           </Pressable>
 
+          {/* Sign in btn */}
           <TouchableRipple
             style={styles.btn}
             rippleColor="#00000040"
@@ -92,7 +95,6 @@ const Signin = () => {
           </TouchableRipple>
         </View>
 
-        {/* Sign in btn */}
 
       </View>
     </SafeAreaView>

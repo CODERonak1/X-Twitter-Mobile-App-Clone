@@ -43,7 +43,7 @@ const RootLayout = () => {
             <StatusBar style="light" backgroundColor="black" />
             {isSignedin ? (
                 <Stack >
-                    <Stack.Screen name="Home"
+                    <Stack.Screen name="(tabs)"
                         options={{ headerShown: false }}
                     />
                 </Stack>
