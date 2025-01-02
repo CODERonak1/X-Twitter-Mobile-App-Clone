@@ -10,7 +10,7 @@ const Home = () => {
 
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'black' }}>
-            <Text style={{ color: 'white', fontSize: 25 }}>Home</Text>
+            <Text style={{ color: 'white', fontSize: 25 }}>Feed</Text>
             <Button
                 title='Log out'
                 onPress={() => {
