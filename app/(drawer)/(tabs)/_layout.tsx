@@ -1,5 +1,5 @@
 // imports
-import { Tabs, useRouter } from "expo-router";
+import { Tabs, useRouter, useNavigation } from "expo-router";
 import { View, Pressable } from "react-native";
 
 // components
@@ -11,11 +11,12 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 const TabLayout = () => {
 
-    const router = useRouter();
+    const navigation = useNavigation()
+    // const router = useRouter();
 
-    // const handlePic = () => {
-    //     router.push("/drawer");
-    // }
+    const handlePic = () => {
+        navigation.openDrawer()
+    }
 
     return (
         <Tabs
@@ -44,24 +45,19 @@ const TabLayout = () => {
                         />
                     ),
 
-                    headerTitle: () => (
-                        <View
-                            style={{
-                                flex: 1,
-                                alignItems: "center",
-                                flexDirection: "row",
-                            }}
-                        >
-                            {/* Pressable to open the drawer */}
-                            <Pressable >
-                                <ProfilePic />
-                            </Pressable>
-
-                            {/* x logo which appears in the center */}
-                            <XWhite />
-                        </View>
+                    headerLeft: () => (
+                        <Pressable onPress={handlePic}>
+                            <ProfilePic />
+                        </Pressable>
                     ),
-                    // headerTitleAlign: 'center',
+
+                    headerTitle: () => (
+                        <XWhite />
+
+                    ),
+
+                    // headerShown: false,
+                    headerTitleAlign: 'center',
                 }}
             />
 
@@ -76,17 +72,12 @@ const TabLayout = () => {
                         />
                     ),
 
-                    headerTitle: () => (
-                        <View
-                            style={{
-                                flex: 1,
-                                alignItems: "center",
-                                flexDirection: "row",
-                            }}
-                        >
+                    headerLeft: () => (
+                        <Pressable onPress={handlePic}>
                             <ProfilePic />
-                        </View>
+                        </Pressable>
                     ),
+
                 }}
             />
 
@@ -102,16 +93,10 @@ const TabLayout = () => {
                         />
                     ),
 
-                    headerTitle: () => (
-                        <View
-                            style={{
-                                flex: 1,
-                                alignItems: "center",
-                                flexDirection: "row",
-                            }}
-                        >
+                    headerLeft: () => (
+                        <Pressable onPress={handlePic}>
                             <ProfilePic />
-                        </View>
+                        </Pressable>
                     ),
                 }}
             />
@@ -127,16 +112,10 @@ const TabLayout = () => {
                         />
                     ),
 
-                    headerTitle: () => (
-                        <View
-                            style={{
-                                flex: 1,
-                                alignItems: "center",
-                                flexDirection: "row",
-                            }}
-                        >
+                    headerLeft: () => (
+                        <Pressable onPress={handlePic}>
                             <ProfilePic />
-                        </View>
+                        </Pressable>
                     ),
                 }}
             />
