@@ -1,35 +1,38 @@
 import { Drawer } from "expo-router/drawer";
-import { DrawerActions, useNavigation } from "@react-navigation/native";
-import { TouchableOpacity } from "react-native";
-import ProfilePic from "@/components/ProfilePic";
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import CustomDrawerContent from "@/components/DrawerComponent/CustomDrawerContent";
 
 const DrawerLayout = () => {
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
-            <Drawer screenOptions={{
-                drawerStyle: {
-                    backgroundColor: 'black',
-                },
-
-                drawerActiveTintColor: 'white',
-                drawerInactiveTintColor: 'white',
-                drawerActiveBackgroundColor: 'none',
-            }}>
+            <Drawer
+                drawerContent={(props) => <CustomDrawerContent {...props} />}
+                screenOptions={{
+                    drawerStyle: {
+                        backgroundColor: "black",
+                        borderRadius: 0,
+                    },
+                    drawerActiveTintColor: "white",
+                    drawerInactiveTintColor: "white",
+                    drawerActiveBackgroundColor: "none",
+                }}
+            >
                 {/* Tab Navigator */}
                 <Drawer.Screen
                     name="(tabs)"
-                    options={{ headerShown: false, title: 'Home' }}
+                    options={{ headerShown: false, title: "Home" }}
                 />
 
-                {/* Demo Screen */}
+                {/* Profile Screen */}
                 <Drawer.Screen
                     name="Profile"
+                    options={{ title: "Profile" }}
                 />
 
-                {/* Demo2 Screen */}
+                {/* Premium Screen */}
                 <Drawer.Screen
                     name="Premium"
+                    options={{ title: "Premium" }}
                 />
             </Drawer>
         </GestureHandlerRootView>
