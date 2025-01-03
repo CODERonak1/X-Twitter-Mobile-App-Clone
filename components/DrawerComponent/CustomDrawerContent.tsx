@@ -4,8 +4,9 @@ import { DrawerContentScrollView, DrawerItem, DrawerItemList } from "@react-navi
 import Ionicons from '@expo/vector-icons/Ionicons';
 import XWhite from "@/components/XWhite";
 import { useRouter } from "expo-router";
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
-const CustomDrawerContent = (props) => {
+const CustomDrawerContent = (props: any) => {
 
     const router = useRouter()
 
@@ -33,17 +34,51 @@ const CustomDrawerContent = (props) => {
                 {/* Profile */}
                 <DrawerItem
                     label="Profile"
-                    icon={() => <Ionicons name="person" size={24} color="white" />}
+                    icon={() => <Ionicons name="person-outline" size={24} color="white" />}
                     labelStyle={styles.labelStyle}
-                    onPress={() => router.push("/Profile")} />
+                    onPress={() => router.push("/Profile")}
+                />
 
                 {/* Premium */}
-
                 <DrawerItem
                     label="Premium"
                     icon={() => <XWhite />}
-                    style={{ marginRight: 10 }} // Custom style for Premium
-                    labelStyle={styles.labelStyle} onPress={() => router.push("/Premium")} />
+                    style={{ marginRight: 10 }}
+                    labelStyle={styles.labelStyle} onPress={() => router.push("/Premium")}
+                />
+
+                {/* Bookmarks */}
+                <DrawerItem
+                    label="Bookmarks"
+                    icon={() => <Ionicons name="bookmark-outline" size={24} color="white" />}
+                    style={{ marginRight: 10 }}
+                    labelStyle={styles.labelStyle} onPress={() => router.push("/Bookmarks")}
+                />
+
+                {/* Jobs */}
+                <DrawerItem
+                    label="Jobs"
+                    icon={() => <Ionicons name="briefcase-outline" size={24} color="white" />}
+                    style={{ marginRight: 10 }}
+                    labelStyle={styles.labelStyle} onPress={() => router.push("/Jobs")}
+                />
+
+                {/* Lists */}
+                <DrawerItem
+                    label="Lists"
+                    icon={() =><FontAwesome5 name="list-alt" size={24} color="white" />}
+                    style={{ marginRight: 10 }}
+                    labelStyle={styles.labelStyle} onPress={() => router.push("/Lists")}
+                />
+
+                {/* settings */}
+                <DrawerItem
+                    label="Settings"
+                    icon={() => <Ionicons name="settings-outline" size={24} color="white" />}
+                    style={{ marginRight: 10 }}
+                    labelStyle={styles.labelStyle} onPress={() => router.push("/Settings")}
+                />
+
             </View>
         </DrawerContentScrollView>
     );

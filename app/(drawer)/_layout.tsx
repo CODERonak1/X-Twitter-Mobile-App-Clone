@@ -11,6 +11,7 @@ const DrawerLayout = () => {
                     drawerStyle: {
                         backgroundColor: "black",
                         borderRadius: 0,
+                        width: '85%'
                     },
                     drawerActiveTintColor: "white",
                     drawerInactiveTintColor: "white",
