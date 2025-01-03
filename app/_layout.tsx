@@ -38,6 +38,12 @@ const RootLayout = () => {
         return <Loading />;
     }
 
+    // default header options
+    const defaultHeaderOptions = {
+        headerStyle: { backgroundColor: "black" },
+        headerTintColor: "white",
+    };
+
     return (
         <PaperProvider>
             <StatusBar style="light" backgroundColor="black" />
@@ -48,12 +54,29 @@ const RootLayout = () => {
                     />
 
                     <Stack.Screen name="Profile"
-                        options={{}}
+                        options={{ ...defaultHeaderOptions }}
                     />
 
                     <Stack.Screen name="Premium"
-                        options={{}}
+                        options={{ ...defaultHeaderOptions }}
                     />
+
+                    <Stack.Screen name="Bookmarks"
+                        options={{ ...defaultHeaderOptions }}
+                    />
+                    <Stack.Screen name="Jobs"
+                        options={{ ...defaultHeaderOptions }}
+                    />
+
+                    <Stack.Screen name="Lists"
+                        options={{ ...defaultHeaderOptions }}
+                    />
+
+                    <Stack.Screen name="Settings"
+                        options={{ ...defaultHeaderOptions }}
+                    />
+
+
                 </Stack>
             ) : (
                 <Stack>

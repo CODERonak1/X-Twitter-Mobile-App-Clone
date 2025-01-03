@@ -4,35 +4,30 @@ import { Stack } from "expo-router";
 import XWhite from "@/components/XWhite";
 
 const AuthLayout = () => {
+
+    const defaultStyles = {
+        headerTitle: () => <XWhite />,
+        headerTitleAlign: "center" as "center",
+        headerStyle: { backgroundColor: "black" },
+        headerTintColor: "white",
+    };
+
     return (
         <Stack>
             <Stack.Screen
                 name="index"
-                options={{
-                    headerShown: false
-                }}
+                options={defaultStyles}
             />
             <Stack.Screen
                 name="Signin"
-                options={{
-                    headerTitle: () => <XWhite />,
-                    headerTitleAlign: "center",
-                    headerStyle: { backgroundColor: "black" },
-                    headerTintColor: "white",
-                }}
+                options={defaultStyles}
             />
 
             <Stack.Screen
                 name="Signup"
-                options={{
-                    headerTitle: () => <XWhite />,
-                    headerTitleAlign: "center",
-                    headerStyle: { backgroundColor: "black" },
-                    headerTintColor: "white",
-                }}
+                options={defaultStyles}
             />
         </Stack>
-
     )
 }
 

@@ -18,6 +18,12 @@ const TabLayout = () => {
         navigation.openDrawer()
     }
 
+    const HeaderLeft = () => (
+        <Pressable onPress={handlePic}>
+            <ProfilePic />
+        </Pressable>
+    );
+
     return (
         <Tabs
             screenOptions={{
@@ -45,18 +51,8 @@ const TabLayout = () => {
                         />
                     ),
 
-                    headerLeft: () => (
-                        <Pressable onPress={handlePic}>
-                            <ProfilePic />
-                        </Pressable>
-                    ),
-
-                    headerTitle: () => (
-                        <XWhite />
-
-                    ),
-
-                    // headerShown: false,
+                    headerLeft: () => <HeaderLeft />,
+                    headerTitle: () => <XWhite />,
                     headerTitleAlign: 'center',
                 }}
             />
@@ -71,13 +67,7 @@ const TabLayout = () => {
                             color={color}
                         />
                     ),
-
-                    headerLeft: () => (
-                        <Pressable onPress={handlePic}>
-                            <ProfilePic />
-                        </Pressable>
-                    ),
-
+                    headerLeft: () => <HeaderLeft />
                 }}
             />
 
@@ -92,12 +82,7 @@ const TabLayout = () => {
                             color={color}
                         />
                     ),
-
-                    headerLeft: () => (
-                        <Pressable onPress={handlePic}>
-                            <ProfilePic />
-                        </Pressable>
-                    ),
+                    headerLeft: () => <HeaderLeft />
                 }}
             />
 
@@ -111,12 +96,7 @@ const TabLayout = () => {
                             color={color}
                         />
                     ),
-
-                    headerLeft: () => (
-                        <Pressable onPress={handlePic}>
-                            <ProfilePic />
-                        </Pressable>
-                    ),
+                    headerLeft: () => <HeaderLeft />
                 }}
             />
         </Tabs>

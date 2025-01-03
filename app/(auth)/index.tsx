@@ -17,11 +17,6 @@ const Index = () => {
 
       {/* main container of the screen*/}
       <View style={styles.container}>
-        {/* X white image */}
-        <View style={styles.imgCont}>
-          <XWhite />
-
-        </View>
 
         {/* showing the text */}
         <View style={styles.textView}>
@@ -61,7 +56,6 @@ const styles = StyleSheet.create({
   background: {
     backgroundColor: "#000",
     height: '100%'
-
   },
 
   container: {
@@ -69,10 +63,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  imgCont: {},
-
   textView: {
-    marginTop: 200,
+    marginTop: 180,
     // borderWidth: 1,
     // borderColor: 'white'
   },

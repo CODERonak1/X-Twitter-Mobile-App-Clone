@@ -43,7 +43,6 @@ const CustomDrawerContent = (props: any) => {
                 <DrawerItem
                     label="Premium"
                     icon={() => <XWhite />}
-                    style={{ marginRight: 10 }}
                     labelStyle={styles.labelStyle} onPress={() => router.push("/Premium")}
                 />
 
@@ -51,7 +50,6 @@ const CustomDrawerContent = (props: any) => {
                 <DrawerItem
                     label="Bookmarks"
                     icon={() => <Ionicons name="bookmark-outline" size={24} color="white" />}
-                    style={{ marginRight: 10 }}
                     labelStyle={styles.labelStyle} onPress={() => router.push("/Bookmarks")}
                 />
 
@@ -59,15 +57,13 @@ const CustomDrawerContent = (props: any) => {
                 <DrawerItem
                     label="Jobs"
                     icon={() => <Ionicons name="briefcase-outline" size={24} color="white" />}
-                    style={{ marginRight: 10 }}
                     labelStyle={styles.labelStyle} onPress={() => router.push("/Jobs")}
                 />
 
                 {/* Lists */}
                 <DrawerItem
                     label="Lists"
-                    icon={() =><FontAwesome5 name="list-alt" size={24} color="white" />}
-                    style={{ marginRight: 10 }}
+                    icon={() => <FontAwesome5 name="list-alt" size={24} color="white" />}
                     labelStyle={styles.labelStyle} onPress={() => router.push("/Lists")}
                 />
 
@@ -75,7 +71,6 @@ const CustomDrawerContent = (props: any) => {
                 <DrawerItem
                     label="Settings"
                     icon={() => <Ionicons name="settings-outline" size={24} color="white" />}
-                    style={{ marginRight: 10 }}
                     labelStyle={styles.labelStyle} onPress={() => router.push("/Settings")}
                 />
 
