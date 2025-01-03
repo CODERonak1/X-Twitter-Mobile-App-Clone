@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, } from 'react-native'
 import React from 'react'
 
+// Messages screen to display and send messages
 const Messages = () => {
     return (
         <SafeAreaView style={styles.background}>

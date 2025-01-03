@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native'
 import React from 'react'
 
-// Loading component to reuse it everywhere
+// Loading component to reuse it everywhere needed
 const Loading = () => {
     return (
         <View style={{ backgroundColor: 'black', height: '100%' }}>

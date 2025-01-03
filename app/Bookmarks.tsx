@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, } from 'react-native'
 import React from 'react'
 
+// for showing the bookmarks
 const Bookmarks = () => {
   return (
     <SafeAreaView style={styles.background}>

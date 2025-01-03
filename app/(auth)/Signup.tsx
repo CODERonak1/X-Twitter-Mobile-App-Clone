@@ -18,6 +18,7 @@ const Signup = () => {
   // router for navigation
   const router = useRouter()
 
+  // function for handling sign up
   const handleSignup = async () => {
 
     try {

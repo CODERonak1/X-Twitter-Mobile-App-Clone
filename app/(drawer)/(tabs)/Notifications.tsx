@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, } from 'react-native'
 import React from 'react'
 
+// notifications screen for showing the notifications
 const Notifications = () => {
     return (
         <SafeAreaView style={styles.background}>

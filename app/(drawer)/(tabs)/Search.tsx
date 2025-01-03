@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, } from 'react-native'
 import React from 'react'
 
+// Search screen for searching
 const Search = () => {
     return (
         <SafeAreaView style={styles.background}>

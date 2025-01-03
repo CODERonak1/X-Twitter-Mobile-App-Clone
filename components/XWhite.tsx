@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 
+// X white image component which x logo in white
 const XWhite = () => {
     return (
         <Image

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, } from 'react-native'
 import React from 'react'
 
+// profile screen for showing the profile info
 const Profile = () => {
   return (
     <SafeAreaView style={styles.background}>

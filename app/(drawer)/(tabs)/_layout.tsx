@@ -11,13 +11,15 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 const TabLayout = () => {
 
+    // use navigation hook for opening the drawer
     const navigation = useNavigation()
-    // const router = useRouter();
 
+    // handles opening the drawer
     const handlePic = () => {
         navigation.openDrawer()
     }
 
+    // Header left component to reuse
     const HeaderLeft = () => (
         <Pressable onPress={handlePic}>
             <ProfilePic />
@@ -26,6 +28,7 @@ const TabLayout = () => {
 
     return (
         <Tabs
+            // Tab bar default stylings
             screenOptions={{
                 tabBarLabel: "",
                 tabBarStyle: {
@@ -40,6 +43,7 @@ const TabLayout = () => {
                 },
             }}
         >
+            {/* Feed scren */}
             <Tabs.Screen
                 name="Feed"
                 options={{
@@ -57,6 +61,7 @@ const TabLayout = () => {
                 }}
             />
 
+            {/* Search screen */}
             <Tabs.Screen
                 name="Search"
                 options={{
@@ -71,6 +76,7 @@ const TabLayout = () => {
                 }}
             />
 
+            {/* Notifications screen */}
             <Tabs.Screen
                 name="Notifications"
                 options={{
@@ -86,6 +92,7 @@ const TabLayout = () => {
                 }}
             />
 
+            {/* Messages screen */}
             <Tabs.Screen
                 name="Messages"
                 options={{

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, } from 'react-native'
 import React from 'react'
 
+// premium screen for X or twitter premium for more features
 const Premium = () => {
   return (
     <SafeAreaView style={styles.background}>

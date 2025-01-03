@@ -10,6 +10,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 // sign in component
 const Signin = () => {
 
+  // function for handlinhg sign  in
   const handleSignin = async () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password)

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, } from 'react-native'
 import React from 'react'
 
+// Jobs screens to show jobs available
 const Jobs = () => {
   return (
     <SafeAreaView style={styles.background}>

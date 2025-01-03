@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, } from 'react-native'
 import React from 'react'
 
+// Lists screen for showing the lists
 const Lists = () => {
   return (
     <SafeAreaView style={styles.background}>

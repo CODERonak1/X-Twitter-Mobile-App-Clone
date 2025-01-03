@@ -6,21 +6,28 @@ import XWhite from "@/components/XWhite";
 import { useRouter } from "expo-router";
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
+// Custom drawer
 const CustomDrawerContent = (props: any) => {
 
+    // for navigating to the other screens 
     const router = useRouter()
 
     return (
+        // Drawer content content scroll view o make the drawer items or content scrollable
         <DrawerContentScrollView {...props} contentContainerStyle={styles.container}>
             {/* Profile Section */}
+            {/* Profile pic, name and username */}
             <View style={styles.profileSection}>
                 <Image
                     source={{ uri: 'https://p6.focus.de/img/wissen/diverses/id_260334382/elon-musk-will-in-zwei-jahren-fuenf-unbemannte-missionen-zum-mars-schicken.-archivbild-.jpg?im=Resize%3D%28800%2C532%29&impolicy=perceptual&quality=mediumHigh&hash=db9a709ddeed554fab887833b4f6938665d1859233ee4401418d4114a2d0c6a4' }}
                     style={{ width: 35, height: 35, borderRadius: 50, marginBottom: 10 }}
                 />
+                {/* Name */}
                 <Text style={styles.profileName}>Elon Musk</Text>
+                {/* Username */}
                 <Text style={styles.greyText}>@elonmusk</Text>
 
+                {/* container of showing followers and following */}
                 <View style={styles.followContainer}>
                     <Text style={styles.followNum}> 80 <Text style={styles.greyText}> Following </Text> </Text>
                     <Text style={styles.followNum}> 80000 <Text style={styles.greyText}> Followers</Text> </Text>
@@ -31,7 +38,7 @@ const CustomDrawerContent = (props: any) => {
             <View style={styles.drawerItems}>
                 <DrawerItemList {...props} />
 
-                {/* Profile */}
+                {/* Profile drawer item */}
                 <DrawerItem
                     label="Profile"
                     icon={() => <Ionicons name="person-outline" size={24} color="white" />}
@@ -39,39 +46,44 @@ const CustomDrawerContent = (props: any) => {
                     onPress={() => router.push("/Profile")}
                 />
 
-                {/* Premium */}
+                {/* Premium drawer item */}
                 <DrawerItem
                     label="Premium"
                     icon={() => <XWhite />}
-                    labelStyle={styles.labelStyle} onPress={() => router.push("/Premium")}
+                    labelStyle={styles.labelStyle}
+                    onPress={() => router.push("/Premium")}
                 />
 
-                {/* Bookmarks */}
+                {/* Bookmarks drawer item */}
                 <DrawerItem
                     label="Bookmarks"
                     icon={() => <Ionicons name="bookmark-outline" size={24} color="white" />}
-                    labelStyle={styles.labelStyle} onPress={() => router.push("/Bookmarks")}
+                    labelStyle={styles.labelStyle}
+                    onPress={() => router.push("/Bookmarks")}
                 />
 
-                {/* Jobs */}
+                {/* Jobs drawer item */}
                 <DrawerItem
                     label="Jobs"
                     icon={() => <Ionicons name="briefcase-outline" size={24} color="white" />}
-                    labelStyle={styles.labelStyle} onPress={() => router.push("/Jobs")}
+                    labelStyle={styles.labelStyle}
+                    onPress={() => router.push("/Jobs")}
                 />
 
-                {/* Lists */}
+                {/* Lists drawer item */}
                 <DrawerItem
                     label="Lists"
                     icon={() => <FontAwesome5 name="list-alt" size={24} color="white" />}
-                    labelStyle={styles.labelStyle} onPress={() => router.push("/Lists")}
+                    labelStyle={styles.labelStyle}
+                    onPress={() => router.push("/Lists")}
                 />
 
-                {/* settings */}
+                {/* settings drawer item */}
                 <DrawerItem
                     label="Settings"
                     icon={() => <Ionicons name="settings-outline" size={24} color="white" />}
-                    labelStyle={styles.labelStyle} onPress={() => router.push("/Settings")}
+                    labelStyle={styles.labelStyle}
+                    onPress={() => router.push("/Settings")}
                 />
 
             </View>

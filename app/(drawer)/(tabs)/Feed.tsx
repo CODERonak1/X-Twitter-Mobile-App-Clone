@@ -4,7 +4,8 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../../firebaseConfig';
 import { useRouter } from 'expo-router';
 
-const Home = () => {
+// feed screen for showing the tweets
+const Feed = () => {
 
     const router = useRouter()
 
@@ -29,6 +30,6 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Feed
 
 const styles = StyleSheet.create({})

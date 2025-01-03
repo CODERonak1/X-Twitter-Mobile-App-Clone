@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, } from 'react-native'
 import React from 'react'
 
+// for settings 
 const Settings = () => {
   return (
     <SafeAreaView style={styles.background}>
