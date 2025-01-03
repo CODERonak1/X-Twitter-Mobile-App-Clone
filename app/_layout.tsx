@@ -46,6 +46,14 @@ const RootLayout = () => {
                     <Stack.Screen name="(drawer)"
                         options={{ headerShown: false }}
                     />
+
+                    <Stack.Screen name="Profile"
+                        options={{}}
+                    />
+
+                    <Stack.Screen name="Premium"
+                        options={{}}
+                    />
                 </Stack>
             ) : (
                 <Stack>
