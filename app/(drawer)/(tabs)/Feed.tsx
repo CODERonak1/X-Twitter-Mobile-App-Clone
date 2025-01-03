@@ -22,7 +22,7 @@ const Home = () => {
                             console.log('Error signing out:', error);
                         });
 
-                    router.push("/")
+                    router.replace("/")
                 }}
             />
         </View>
