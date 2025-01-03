@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import { DrawerContentScrollView, DrawerItem, DrawerItemList } from "@react-navigation/drawer";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import XWhite from "@/components/XWhite";
 import { useRouter } from "expo-router";
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import { TouchableRipple } from "react-native-paper";
 
 // Custom drawer
 const CustomDrawerContent = (props: any) => {
@@ -18,20 +19,34 @@ const CustomDrawerContent = (props: any) => {
             {/* Profile Section */}
             {/* Profile pic, name and username */}
             <View style={styles.profileSection}>
-                <Image
-                    source={{ uri: 'https://p6.focus.de/img/wissen/diverses/id_260334382/elon-musk-will-in-zwei-jahren-fuenf-unbemannte-missionen-zum-mars-schicken.-archivbild-.jpg?im=Resize%3D%28800%2C532%29&impolicy=perceptual&quality=mediumHigh&hash=db9a709ddeed554fab887833b4f6938665d1859233ee4401418d4114a2d0c6a4' }}
-                    style={{ width: 35, height: 35, borderRadius: 50, marginBottom: 10 }}
-                />
-                {/* Name */}
-                <Text style={styles.profileName}>Elon Musk</Text>
-                {/* Username */}
-                <Text style={styles.greyText}>@elonmusk</Text>
+                <TouchableRipple
+                    rippleColor="#00000040"
+                    onPress={() => router.push("/Profile")}
+                >
+                    <Image
+                        source={{ uri: 'https://p6.focus.de/img/wissen/diverses/id_260334382/elon-musk-will-in-zwei-jahren-fuenf-unbemannte-missionen-zum-mars-schicken.-archivbild-.jpg?im=Resize%3D%28800%2C532%29&impolicy=perceptual&quality=mediumHigh&hash=db9a709ddeed554fab887833b4f6938665d1859233ee4401418d4114a2d0c6a4' }}
+                        style={{ width: 35, height: 35, borderRadius: 50, marginBottom: 10 }}
+                    />
+
+                </TouchableRipple>
+
+                <Pressable
+                    onPress={() => router.push("/Profile")}
+                >
+                    {/* Name */}
+                    <Text style={styles.profileName}>Elon Musk</Text>
+                    {/* Username */}
+                    <Text style={styles.greyText}>@elonmusk</Text>
+
+                </Pressable>
 
                 {/* container of showing followers and following */}
-                <View style={styles.followContainer}>
+                <Pressable
+                    style={styles.followContainer}>
                     <Text style={styles.followNum}> 80 <Text style={styles.greyText}> Following </Text> </Text>
+                    
                     <Text style={styles.followNum}> 80000 <Text style={styles.greyText}> Followers</Text> </Text>
-                </View>
+                </Pressable>
             </View>
 
             {/* Drawer Items */}
@@ -39,13 +54,13 @@ const CustomDrawerContent = (props: any) => {
                 <DrawerItemList {...props} />
 
                 {/* Profile drawer item */}
-                <DrawerItem
-                    label="Profile"
-                    icon={() => <Ionicons name="person-outline" size={24} color="white" />}
-                    labelStyle={styles.labelStyle}
-                    onPress={() => router.push("/Profile")}
-                />
-
+                    <DrawerItem
+                        label="Profile"
+                        icon={() => <Ionicons name="person-outline" size={24} color="white" />}
+                        labelStyle={styles.labelStyle}
+                        onPress={() => router.push("/Profile")}
+                    />
+            
                 {/* Premium drawer item */}
                 <DrawerItem
                     label="Premium"
@@ -139,5 +154,5 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 18,
         fontWeight: 'bold'
-    }
+    },
 });
