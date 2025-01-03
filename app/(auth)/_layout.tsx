@@ -16,7 +16,10 @@ const AuthLayout = () => {
         <Stack>
             <Stack.Screen
                 name="index"
-                options={defaultStyles}
+                options={{
+                    ...defaultStyles,
+                   headerBackVisible: false
+                }}
             />
             <Stack.Screen
                 name="Signin"
